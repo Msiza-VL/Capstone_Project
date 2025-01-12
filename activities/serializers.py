@@ -1,12 +1,12 @@
-from rest_framework import serializers
+# from rest_framework import serializers
 
-from .models import Activity
+# from .models import Activity
 
 
-class ActivitySerializer(serializers.ModelSerializer):
+# class ActivitySerializer(serializers.ModelSerializer):
 
-    class Meta:
+#     class Meta:
 
-        model = Activity
+#         model = Activity
 
-        fields = '__all__'
+#         fields = '__all__'

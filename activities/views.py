@@ -1,22 +1,22 @@
-from rest_framework import viewsets, permissions
+# from rest_framework import viewsets, permissions
 
-from .models import Activity
+# from .models import Activity
 
-from .serializers import ActivitySerializer
-
-
-class ActivityViewSet(viewsets.ModelViewSet):
-
-    serializer_class = ActivitySerializer
-
-    permission_classes = [permissions.IsAuthenticated]
+# from .serializers import ActivitySerializer
 
 
-    def get_queryset(self):
+# class ActivityViewSet(viewsets.ModelViewSet):
 
-        return Activity.objects.filter(user=self.request.user)
+#     serializer_class = ActivitySerializer
+
+#     permission_classes = [permissions.IsAuthenticated]
 
 
-    def perform_create(self, serializer):
+#     def get_queryset(self):
 
-        serializer.save(user=self.request.user)
+#         return Activity.objects.filter(user=self.request.user)
+
+
+#     def perform_create(self, serializer):
+
+#         serializer.save(user=self.request.user)
