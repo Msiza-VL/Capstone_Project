@@ -20,19 +20,28 @@ class Activity(models.Model):
     ]
 
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='activities')
 
     activity_type = models.CharField(max_length=50, choices=ACTIVITY_TYPES)
 
-    duration = models.PositiveIntegerField()  # in minutes
+    duration = models.PositiveIntegerField(help_text='Duration in minutes')  # in minutes
 
-    distance = models.FloatField()  # in km or miles
+    distance = models.FloatField(null=True, blank=True, help_text='Distance in kilometres')  # in km or miles
 
     calories_burned = models.PositiveIntegerField()
 
     date = models.DateField()
 
+    #user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='activities')
+
+    created_at = models.DateTimeField(auto_now=True)
+
+    updated_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
 
         return f"{self.activity_type} by {self.user.username} on {self.date}"
+
+    class Meta:
+        verbose_name_plural = 'Activities'

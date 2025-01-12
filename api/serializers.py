@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ActivitySerializer(serializers.ModelSerializer):
-
+    user = serializers.ReadOnlyField(source='user.username')
     class Meta:
 
         model = Activity
