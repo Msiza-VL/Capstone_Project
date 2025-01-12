@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'activities',
-    'rest_framework.authtoken',
+    'users',
+    #'rest_framework.authtoken',
     
 ]
 
@@ -125,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# THE BELOW CODE WAS INSERTED FOR THE DEVELOPMENT OF THIS PROJECT
+
+AUTH_USER_MODEL = 'users.User'
